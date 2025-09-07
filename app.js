@@ -26,9 +26,9 @@ prev.onclick = function () {
 }
 
 // auto rum slider
-// let refreshInterval = setInterval(() => {
-//     next.click();
-// }, 20000)
+let refreshInterval = setInterval(() => {
+    next.click();
+}, 50000)
 
 function showSlider() {
     // remove item active old
@@ -103,6 +103,12 @@ const setMusic = (i) => {
 }
 
 setMusic(0)
+
+const audio = document.getElementById('audio');
+audio.onloadedmetadata = function () {
+    // Agora a duração está disponível
+    console.log(audio.duration);
+};
 
 const formatTime = (time) => {
     let min = Math.floor(time / 60);
